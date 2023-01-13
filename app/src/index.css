@@ -9,7 +9,20 @@ body {
   align-items: center;
   justify-content: center;
 }
-
+h1{
+  color:#33ae98;
+  font-size: 2.5rem;
+  margin:0 0 0 0;
+}
+h2 span{
+  color:#7684a7;
+  font-size: 1.2rem;
+}
+h2{
+  color:#92dccf;
+  font-size: 1rem;
+  margin:0 0 2rem 0;
+}
 label {
   display: block;
   margin-bottom: 0.5rem;
@@ -47,7 +60,16 @@ img{
   max-height:80vmin
 }
 
-
+footer{
+  background-color: #282c34;
+  max-height: 20vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(6px + 2vmin);
+  color: white;
+}
 .App-header {
   background-color: #282c34;
   max-height: 20vh;
