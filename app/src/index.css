@@ -90,6 +90,7 @@ footer{
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+  flex-direction:column;
 }
 .footer_aeveco{
   color:#33ae98;
