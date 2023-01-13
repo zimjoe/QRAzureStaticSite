@@ -10,7 +10,7 @@ root.render(
   <React.StrictMode>
     <header className="App-header">
       <h1>Qrap.io</h1>
-      <h2><span>Crappio</span> The Internet QR Code Generator</h2>
+      <h2><span>Crappio</span> QR Code Generator</h2>
     </header>
     <App />
     <footer>
