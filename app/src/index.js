@@ -8,7 +8,7 @@ import App from './App';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <header className="App-header">
+    <header className="header row">
       <h1>Qrap.io</h1>
       <h2><span>Crappio</span> QR Code Generator</h2>
     </header>
