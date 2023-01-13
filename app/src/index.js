@@ -14,7 +14,16 @@ root.render(
     </header>
     <App />
     <footer>
-      <div>Aeveco 2023</div>
+      <div>An open source project for making QR codes.</div>
+      <ul>
+        <li>
+          <a href='https://github.com/zimjoe/QRAzureStaticSite'>https://github.com/zimjoe/QRAzureStaticSite</a>
+        </li>
+        <li>
+          <a href='https://github.com/zimjoe/QRAzureFunctions'>https://github.com/zimjoe/QRAzureFunctions</a>
+        </li>
+      </ul>
+      <div className='footer_aeveco'>Aeveco 2023</div>
     </footer>
   </React.StrictMode>
 );
