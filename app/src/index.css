@@ -65,6 +65,9 @@ nav button.current{
   display:none;
 }
 
+pre{
+  color:#e78680;
+}
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;

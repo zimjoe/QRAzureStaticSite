@@ -84,6 +84,45 @@ button{
 
 }
 
+
+/* Loading bar area */
+/* inspired/stolen from https://codepen.io/hopearmstrong/pen/VNYoNq*/
+#loading-bar{
+  background-color:#fff;
+  box-sizing: border-box;
+  width: 80vmin;
+  height: 80vmin;
+  padding:2rem;
+}
+#loading-bar-left {
+  color:#ccc;
+  animation: loading-bar-morph 1s linear 0.2s infinite;
+  transform-origin: center;
+}
+#loading-bar-middle {
+  animation: loading-bar-morph 1s linear 0.3s infinite;
+  transform-origin: center;
+}
+#loading-bar-right {
+  animation: loading-bar-morph 1s linear 0.4s infinite;
+  transform-origin: center;
+}
+
+@keyframes loading-bar-morph {
+  0% {
+    transform: scaleY(1);
+  }
+  25% {
+    transform: scaleY(0.3);
+  }
+  50% {
+    transform: scaleY(0.7);
+  }
+  75% {
+    transform: scaleY(0.15);
+  }
+}
+
 @media (min-width: 768px) {
   .app {
     width: 60vmin;
@@ -94,25 +133,8 @@ button{
   .button_line{
     border-radius: 0 0.25rem 0.25rem 0;
   }
-}
-
-/* .App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-} 
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
+  #loading-bar{
+    width: 60vmin;
+    height: 60vmin;
   }
 }
-*/

@@ -19,7 +19,18 @@ class UrlForm extends React.Component {
  
   handleSubmit(event) {
     event.preventDefault();
-    this.props.handleUrlChange("UrlQR?url=" +this.state.urlValue, "Url QR COde"); 
+    //this.props.handleUrlChange("UrlQR?url=" +this.state.urlValue, "Url QR COde"); 
+
+    //?wifiname=KidsAndDogsAreCool&passcode=HelloMyLittleFriendAndPals
+    let newUrl = "UrlQR";
+    console.log(newUrl);
+    
+    //this.props.handleUrlChange(newUrl, "WiFi QR Code"); 
+    let body = JSON.stringify({
+      url: this.state.urlValue
+    });
+    this.props.callService(newUrl, body, "Url QR Code"); 
+
   }
   
   handleInputChange(event) {
