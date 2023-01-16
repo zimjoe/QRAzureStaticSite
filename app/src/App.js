@@ -1,80 +1,71 @@
 //import logo from './logo.svg';
 import React from 'react';
 import './App.css';
+import  UrlForm from './components/UrlForm.js';
+import  WiFiForm from './components/WiFiForm.js';
 
 class App extends React.Component {
-  
   constructor(props) {
     super(props);
     this.state = {
-      base: "https://joesazurefunction.azurewebsites.net/api/UrlQR?Url=",
-      url: "https://github.com/zimjoe/QRAzureFunctions/wiki",
-      urlValue: "https://github.com/zimjoe/QRAzureFunctions/wiki",
+      base: "https://joesazurefunction.azurewebsites.net/api/",
+      url: "/UrlQr.png",
+      alt: "QR Code for the Project Wiki",
+      serverError:"",
       cansubmit: false
     };
-
-    this.handleInputChange = this.handleInputChange.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleUrlChange = this.handleUrlChange.bind(this);
+    this.callService = this.callService.bind(this);
   }
- 
-  handleSubmit(event) {
-    event.preventDefault();
 
+  // Allows the forms to elevate the finished URL
+  handleUrlChange(newUrl, newAlt){
+    console.log(this.state.base + newUrl)
     this.setState(state => ({
-      url: this.state.urlValue,
-      cansubmit: false
+      url: this.state.base + newUrl,
+      cansubmit: true
     }));
-
   }
 
-  handleInputChange(event) {
-    const target = event.target;
-    const value = target.type === 'checkbox' ? target.checked : target.value;
-    const name = target.name;
-    this.setState({ [name]: value });
+  callService(newUrl, body, newAlt){
+    console.log(this.state.base + newUrl);
 
-    // deal with minimal validation
-    if(this.isValidUrl()){
-
-    }else{
-
-    }
-  }
-
-  // straight up stolen from https://www.freecodecamp.org/news/check-if-a-javascript-string-is-a-url/
-  isValidUrl = urlString=> {
-      var urlPattern = new RegExp('^(https?:\\/\\/)?'+ // validate protocol
-      '((([a-z\\d]([a-z\\d-]*[a-z\\d])*)\\.)+[a-z]{2,}|'+ // validate domain name
-      '((\\d{1,3}\\.){3}\\d{1,3}))'+ // validate OR ip (v4) address
-      '(\\:\\d+)?(\\/[-a-z\\d%_.~+]*)*'+ // validate port and path
-      '(\\?[;&a-z\\d%_.~+=-]*)?'+ // validate query string
-      '(\\#[-a-z\\d_]*)?$','i'); // validate fragment locator
-    return !!urlPattern.test(urlString);
+    fetch(this.state.base + newUrl, {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: body
+    })
+    .then((response) => {
+      if(response.headers.get("content-type")==="image/png"){
+        response.blob().then((myBlob) => {
+          if(myBlob){
+            console.log(URL.createObjectURL(myBlob))
+            this.setState(state => ({
+              alt: newAlt,
+              url: URL.createObjectURL(myBlob),
+              cansubmit: true
+            }));
+          }
+          
+        });
+      }else{
+        // handle error
+      }
+    });
   }
 
   render(){
     return (
-      <div className="App">
-        <form onSubmit={this.handleSubmit}>
-        <label htmlFor='UrlValue'>Enter a URL to create a code</label>
-          <div className='row'>
-            <input 
-              id='UrlValue' 
-              name='urlValue'
-              placeholder='https://'
-              value={this.state.urlValue}
-              onChange={this.handleInputChange} />
-            <button 
-              type="submit"
-              onClick={() => this.setState(state => ({url: "https://github.com"}))}
-            >Submit</button>
-          </div>
-        </form>
-
+      <div className="app">
+        <UrlForm  handleUrlChange={this.handleUrlChange} callService={this.callService} />
+        <WiFiForm  handleUrlChange={this.handleUrlChange} callService={this.callService} />
+        <pre>
+          {this.state.serverError} 
+        </pre>
         <img 
-          alt="QR Code for the entered URL" 
+          alt={this.state.alt}  
           className='qrcode' 
-          src={this.state.base + this.state.url} 
+          src={this.state.url} 
         />
       </div>
     );

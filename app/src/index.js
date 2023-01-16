@@ -5,16 +5,29 @@ import './index.css';
 import App from './App';
 //import reportWebVitals from './reportWebVitals';
 
+// hinky solution for now.  Will fix later with a proper menu
+const toggleMenu = (show, hide)=>{
+  let showForm = document.getElementById(show);
+  let hideForm = document.getElementById(hide);
+  if(showForm && hideForm){
+    showForm.className = "";
+    hideForm.className = "hidden";
+  }
+};
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <header className="header row">
       <h1>Qrap.io</h1>
-      <h2><span>Crappio</span> QR Code Generator</h2>
+      <h2><span>Qrapio</span>QR Code Generator</h2>
     </header>
+    <nav>
+      <button onClick={()=>{toggleMenu("UrlForm", "WifiForm")}}>Url QR</button>
+      <button onClick={()=>{toggleMenu("WifiForm", "UrlForm")}}>Wifi QR</button>
+    </nav>
     <App />
     <footer>
-      <div>An open source project for making QR codes.</div>
+      <div>An open source project for deploying a QR Azure App.</div>
       <ul>
         <li>
           <a href='https://github.com/zimjoe/QRAzureStaticSite'>https://github.com/zimjoe/QRAzureStaticSite</a>
