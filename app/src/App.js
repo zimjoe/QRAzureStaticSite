@@ -9,7 +9,7 @@ class App extends React.Component {
     super(props);
     this.state = {
       base: "https://joesazurefunction.azurewebsites.net/api/",
-      url: "/UrlQr.png",
+      url: "/UrlQR.png",
       alt: "QR Code for the Project Wiki",
       serverError:"",
       cansubmit: false
