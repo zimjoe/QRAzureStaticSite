@@ -57,9 +57,10 @@ nav button{
 nav button:hover{
   background-color: #7684a7;
 }
-.selected{
+nav button.current{
   background-color: #7684a7;
 }
+
 .hidden{
   display:none;
 }
