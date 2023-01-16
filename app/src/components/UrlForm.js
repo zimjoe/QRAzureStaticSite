@@ -6,8 +6,8 @@ class UrlForm extends React.Component {
     super(props);
     this.state = {
       base: "https://joesazurefunction.azurewebsites.net/api/UrlQR?Url=",
-      url: "https://github.com/zimjoe/QRAzureFunctions/wiki",
-      urlValue: "https://github.com/zimjoe/QRAzureFunctions/wiki",
+      url: "",
+      urlValue: "",
       urlValueClass:"",
       cansubmit: false
     };
@@ -50,7 +50,7 @@ class UrlForm extends React.Component {
               value={this.state.urlValue}
               required={true}
               title="https:// or http:// urls only"
-              pattern="^(https?://)[\w\W]+"
+              pattern="^[hH][tT][tT][pP][sS]?://[\w\W]+"
               onKeyUp={this.handleKeyUp}
               onChange={this.handleInputChange} />
             <Button className='button_stack' />
