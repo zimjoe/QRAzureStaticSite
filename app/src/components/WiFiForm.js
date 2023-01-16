@@ -66,7 +66,7 @@ class WiFiForm extends React.Component {
             <div className='column'>
             <label htmlFor='Passcode'>Passcode <i>(Minimum 12 characters)</i></label>
             <input 
-                id='Passcode (minimum 12 chars)' 
+                id='Passcode' 
                 className={this.state.passcodeClass}
                 name='passcode'
                 autoComplete='off'

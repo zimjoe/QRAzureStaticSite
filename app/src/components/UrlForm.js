@@ -37,8 +37,10 @@ class UrlForm extends React.Component {
   render(){
     return (
         <form onSubmit={this.handleSubmit} id="UrlForm"  className="form urlForm">
-        <label className='h3' htmlFor='UrlValue'>Enter a URL to create a QR Code </label>
+        <h3>Create a Url QR Code</h3>
+        
           <div className='column'>
+          <label htmlFor='UrlValue'>Url <i>(must start with http:// or https://)</i> </label>
             <input 
               id='UrlValue' 
               className={this.state.urlValueClass}
