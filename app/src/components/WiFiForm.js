@@ -19,9 +19,8 @@ class WiFiForm extends React.Component {
  
   handleSubmit(event) {
     event.preventDefault();
-    //?wifiname=KidsAndDogsAreCool&passcode=HelloMyLittleFriendAndPals
-    let newUrl = `WiFiQR?wifiname=${this.state.wifiName}&passcode=${this.state.passcode}`;
-    console.log(newUrl);
+    let newUrl = `WiFiQR`;
+    
     
     //this.props.handleUrlChange(newUrl, "WiFi QR Code"); 
     let body = JSON.stringify({
