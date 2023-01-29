@@ -33,7 +33,7 @@ class App extends React.Component {
     console.log(this.state.base + newUrl);
     this.setState(state => ({
       url:"",
-      qrBarClassName:'hidden',
+      qrClassName:'hidden',
       loadingBarClassName:''
     }));
     fetch(this.state.base + newUrl, {
@@ -51,7 +51,7 @@ class App extends React.Component {
               alt: newAlt,
               url: URL.createObjectURL(myBlob),
               cansubmit: true,
-              qrBarClassName:'qrcode',
+              qrClassName:'qrcode',
               loadingBarClassName:'hidden'
             }));
           }
@@ -84,7 +84,9 @@ class App extends React.Component {
         
         <img 
           alt={this.state.alt}  
-          className={this.state.qrBarClassName}
+          className={this.state.qrClassName}
+          width='300px'
+          height='300px'
           src={this.state.url} 
         />
         <svg id="loading-bar" className={this.state.loadingBarClassName} xmlns="http://www.w3.org/2000/svg" width="36" height="22" viewBox="0 0 36 22">
