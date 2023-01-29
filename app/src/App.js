@@ -13,7 +13,8 @@ class App extends React.Component {
       alt: "QR Code for the Project Wiki",
       serverError:"",
       cansubmit: false,
-      loadingBarClass:'hidden'
+      loadingBarClassName:'hidden',
+      qrClassName:'qrcode'
     };
     this.handleUrlChange = this.handleUrlChange.bind(this);
     this.callService = this.callService.bind(this);
@@ -32,7 +33,8 @@ class App extends React.Component {
     console.log(this.state.base + newUrl);
     this.setState(state => ({
       url:"",
-      loadingBarClass:''
+      qrBarClassName:'hidden',
+      loadingBarClassName:''
     }));
     fetch(this.state.base + newUrl, {
       method: 'POST',
@@ -49,7 +51,8 @@ class App extends React.Component {
               alt: newAlt,
               url: URL.createObjectURL(myBlob),
               cansubmit: true,
-              loadingBarClass:'hidden'
+              qrBarClassName:'qrcode',
+              loadingBarClassName:'hidden'
             }));
           }
           
@@ -62,7 +65,7 @@ class App extends React.Component {
             serverError: "Server Error: " + data[0]?.error,
             url: "",
             alt: "",
-            loadingBarClass:'hidden'
+            loadingBarClassName:'hidden'
           }));
         });
       }
@@ -81,10 +84,10 @@ class App extends React.Component {
         
         <img 
           alt={this.state.alt}  
-          className='qrcode' 
+          className={this.state.qrBarClassName}
           src={this.state.url} 
         />
-        <svg id="loading-bar" className={this.state.loadingBarClass} xmlns="http://www.w3.org/2000/svg" width="36" height="22" viewBox="0 0 36 22">
+        <svg id="loading-bar" className={this.state.loadingBarClassName} xmlns="http://www.w3.org/2000/svg" width="36" height="22" viewBox="0 0 36 22">
           <g>
             <rect id="loading-bar-left" width="8" height="22"/>
             <rect id="loading-bar-middle" width="8" height="22" x="14"/>
