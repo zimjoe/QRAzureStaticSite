@@ -9,7 +9,6 @@ import App from './App';
 const toggleMenu = (show, hide)=>{
   
   [...document.getElementById('QRMenu').children].forEach(child => {
-    console.log(child.id + " - nav"+show)
     if(child.id==="Nav"+show){
       document.getElementById(child.dataset.toggle).className = "";
       child.className = "current";
