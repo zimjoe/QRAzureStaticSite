@@ -3,6 +3,7 @@ import React from 'react';
 import './App.css';
 import  UrlForm from './components/UrlForm.js';
 import  WiFiForm from './components/WiFiForm.js';
+import  EmailForm from './components/EmailForm.js';
 
 class App extends React.Component {
   constructor(props) {
@@ -78,6 +79,7 @@ class App extends React.Component {
        
         <UrlForm  handleUrlChange={this.handleUrlChange} callService={this.callService} />
         <WiFiForm  handleUrlChange={this.handleUrlChange} callService={this.callService} />
+        <EmailForm  handleUrlChange={this.handleUrlChange} callService={this.callService} />
         <pre>
           {this.state.serverError} 
         </pre>

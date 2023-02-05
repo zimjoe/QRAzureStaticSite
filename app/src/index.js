@@ -8,26 +8,26 @@ import App from './App';
 // hinky solution for now.  Will fix later with a proper menu
 const toggleMenu = (show, hide)=>{
   
-  let showForm = document.getElementById(show + "Form");
-  let hideForm = document.getElementById(hide + "Form");
-  if(showForm && hideForm){
-    showForm.className = "";
-    hideForm.className = "hidden";
-  }
-  let showButton = document.getElementById("Nav" + show);
-  let hideButton = document.getElementById("Nav" + hide);
-  if(showButton && hideButton){
-    hideButton.className = "";
-    showButton.className = "current";
-  }
+  [...document.getElementById('QRMenu').children].forEach(child => {
+    console.log(child.id + " - nav"+show)
+    if(child.id==="Nav"+show){
+      document.getElementById(child.dataset.toggle).className = "";
+      child.className = "current";
+    } else {
+      document.getElementById(child.dataset.toggle).className = "hidden";
+      child.className = "";
+    }
+  });
+
 };
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     
-    <nav>
-      <button id="NavUrl" className='current' onClick={()=>{toggleMenu("Url", "Wifi")}}>Make a Url QR</button>
-      <button id="NavWifi" onClick={()=>{toggleMenu("Wifi", "Url")}}>Make a Wifi QR</button>
+    <nav id="QRMenu">
+      <button id="NavUrl" className='current' data-toggle="UrlForm" onClick={()=>{toggleMenu("Url", "Wifi")}}>Make a Url QR</button>
+      <button id="NavWifi" data-toggle="WifiForm" onClick={()=>{toggleMenu("Wifi", "Url")}}>Make a Wifi QR</button>
+      <button id="NavEmail" data-toggle="EmailForm" onClick={()=>{toggleMenu("Email", "Url")}}>Make an Email QR</button>
     </nav>
 
     <App />

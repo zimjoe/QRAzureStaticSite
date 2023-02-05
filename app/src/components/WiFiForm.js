@@ -58,6 +58,7 @@ class WiFiForm extends React.Component {
                 title="Minimum 4 character SSID"
                 required={true}
                 pattern="^.{4,64}$"
+                maxLength={64}
                 onKeyUp={this.handleKeyUp}
                 onChange={this.handleInputChange} />
             </div>
@@ -74,9 +75,10 @@ class WiFiForm extends React.Component {
                 placeholder='Long passcode no one will guess'
                 title="Minimum 12 character passcode"
                 pattern="^.{12,64}$"
+                maxLength={64}
                 onKeyUp={this.handleKeyUp}
                 onChange={this.handleInputChange} />
-            <Button className='button_stack' />
+            <Button className='button_stack'>Submit WiFi QR</Button>
             
             </div>
         </form>

@@ -10,31 +10,34 @@ label {
   color: rgb(226, 224, 224);
 }
 
-input {
+input, textarea {
   display: block;
   width: 100%;
   margin: 0;
   padding: 0.5rem;
   font-size: 1rem;
+  font-family:Arial, Helvetica, sans-serif;
   border: 2px solid rgba(256, 256, 256, 0.3);
   border-radius: 0.25rem;
   color:#fff;
   background-color: rgba(256, 256, 256, 0.1);
   box-sizing: border-box;
 }
-
-input:focus{
+textarea {
+  min-height: 4rem;;
+}
+input:focus, textarea:focus{
   outline-style: solid;
   outline-color: #b5cfe9;
   outline-width: .1rem;
   outline-offset: -.2rem;
 }
 
-input.error:focus{
+.error:focus{
   outline-color: darkred;
 }
 
-input.validation{
+.validation{
   background-repeat: no-repeat;
   background-position: right .2rem ;
   background-size: 1.2rem;

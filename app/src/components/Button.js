@@ -1,5 +1,5 @@
 
-const Button = ({ type = 'submit', className = 'button_line', handleClick, children = 'Make QR' }) => {
+const Button = ({ type = 'submit', className = 'button_line', handleClick, children = 'Submit QR' }) => {
 return (
     <button 
         type={type}

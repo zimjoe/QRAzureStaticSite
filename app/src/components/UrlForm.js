@@ -64,7 +64,7 @@ class UrlForm extends React.Component {
               pattern="^[hH][tT][tT][pP][sS]?://[\w\W]+"
               onKeyUp={this.handleKeyUp}
               onChange={this.handleInputChange} />
-            <Button className='button_stack' />
+            <Button className='button_stack'>Submit Url QR</Button>
             
           </div>
         </form>
