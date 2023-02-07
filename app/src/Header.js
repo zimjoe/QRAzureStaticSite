@@ -1,13 +1,7 @@
-import './Header.css';
+import "./Header.css";
 
 function Header() {
-  return (
-
-      <header className="header">
-        QR Code Generator
-      </header>
-
-  );
+  return <header className="header">QR Code Generator</header>;
 }
 
 export default Header;
