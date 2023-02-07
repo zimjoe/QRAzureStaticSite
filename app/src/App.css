@@ -1,8 +1,8 @@
 .app {
   /* text-align: center; */
-  margin:auto;
+  margin: auto;
   width: 80vmin;
-  position:relative;
+  position: relative;
 }
 
 label {
@@ -10,93 +10,103 @@ label {
   color: rgb(226, 224, 224);
 }
 
-input, textarea {
+input,
+textarea {
   display: block;
   width: 100%;
   margin: 0;
+  margin-top: 0.2rem;
   padding: 0.5rem;
   font-size: 1rem;
-  font-family:Arial, Helvetica, sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
   border: 2px solid rgba(256, 256, 256, 0.3);
   border-radius: 0.25rem;
-  color:#fff;
+  color: #fff;
   background-color: rgba(256, 256, 256, 0.1);
   box-sizing: border-box;
 }
+
 textarea {
-  min-height: 4rem;;
-}
-input:focus, textarea:focus{
-  outline-style: solid;
-  outline-color: #b5cfe9;
-  outline-width: .1rem;
-  outline-offset: -.2rem;
+  min-height: 4rem;
 }
 
-.error:focus{
+input:focus,
+textarea:focus {
+  outline-style: solid;
+  outline-color: #b5cfe9;
+  outline-width: 2px;
+  outline-offset: -1px;
+}
+
+.error:focus {
   outline-color: darkred;
 }
 
-.validation{
+.validation {
   background-repeat: no-repeat;
-  background-position: right .2rem ;
+  background-position: right 0.2rem;
   background-size: 1.2rem;
 }
 
-.validation:valid{
-  outline-color: #8fe1a2;
-  outline-style: solid;
+.validation:valid {
+  border-color: #8fe1a2;
+  /* outline-style: solid;
   outline-width: .1rem;
-  outline-offset: -.2rem;
+  outline-offset: -.2rem; */
   background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNTEyIiBoZWlnaHQ9IjUxMiIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4NCjxwYXRoIHN0eWxlPSJmaWxsOiM4ZmUxYTI7ZmlsbC1vcGFjaXR5OjE7c3Ryb2tlOiM4ZmUxYTI7c3Ryb2tlLXdpZHRoOjQzLjAzNjtzdHJva2UtbGluZWNhcDpzcXVhcmU7c3Ryb2tlLWxpbmVqb2luOnJvdW5kO3N0cm9rZS1kYXNoYXJyYXk6bm9uZTtzdHJva2Utb3BhY2l0eToxO3BhaW50LW9yZGVyOnN0cm9rZSBmaWxsIG1hcmtlcnMiIGQ9Ik0gNDE4LjQ4OTc1LDgzLjg4NjE0MiBDIDE0Mi43MjU2Miw0MjAuMzAyNzggNDIwLjAyNTA2LDgyLjc3NTEwOSAxNDEuOTIwNjcsNDIwLjIxODM0IGwgLTQ4LjA2MTM4NSwwLjcwNTA0IC03MC4yNzc0MzIsLTk3LjE5NjI5IDM3LjUxOTcwOCwtMzMuOTY4OTEgNjUuNjM0NzI5LDk1Ljg4NTYxIEMgMzY0LjQ4NDMzLDgzLjUxMjU3NCAxMjUuOTM0NjIsMzg0LjAyODMxIDM2NC41MzkzOCw4My44ODYxNDIgWiIgaWQ9ImJpZ2NoZWNrIiAvPg0KPC9zdmc+IA==);
 }
 
-.validation:invalid{
-  outline-color: #e78680;
-  outline-style: solid;
+.validation:invalid {
+  border-color: #e78680;
+  /* outline-style: solid;
   outline-width: .1rem;
-  outline-offset: -.2rem;
+  outline-offset: -.2rem; */
   background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNTEyIiBoZWlnaHQ9IjUxMiIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4NCjxwYXRoIHN0eWxlPSJmaWxsOiNlNzg2ODA7c3Ryb2tlOiNlNzg2ODA7c3Ryb2tlLXdpZHRoOjQzLjAzNjtzdHJva2UtZGFzaGFycmF5Om5vbmU7c3Ryb2tlLWxpbmVjYXA6c3F1YXJlO3BhaW50LW9yZGVyOnN0cm9rZSBmaWxsIG1hcmtlcnM7c3Ryb2tlLWxpbmVqb2luOnJvdW5kIiBkID0gIk0gNDE4LjU1MzQ4LDg0LjYxNTgxOCAyOTAuNzYzMjYsMjUxLjIxMDM3IDQxOC4zMDQ4Myw0MjEuNjUzMDYgSCAzNjEuMzcxMDUgTCAyNjAuNDMxNzUsMjgyLjg5OTQ4IDE1Ny4wMDYyMSw0MjEuNjUzMDYgSCAxMDMuMzA0NSBMIDIzMi4zMzc3OSwyNTMuMjQ3NiAxMDYuMjg3OTMsODQuNjE1ODE4IGggNTYuNjg1MTQgTCAyNjIuNjY5MjksMjIxLjU1ODQ4IDM2NC42MDMxMSw4NC42MTU4MTggWiIgaWQ9ImJpZ3giIC8+DQo8L3N2Zz4=);
 }
-.input_line{
-  border-radius: 0.25rem 0.25rem 0 0 ;
+.input_line {
+  border-radius: 0.25rem 0.25rem 0 0;
 }
 /* generic button style*/
-button{
+button {
   display: block;
   margin: 0;
   padding: 0.5rem;
   border: 0;
   border-radius: 0.25rem;
-  background-color: #26588C;
+  background-color: #26588c;
   color: #fff;
   cursor: pointer;
 }
+button:hover,
+button:focus {
+  outline-color: #5699e0;
+  outline-style: solid;
+  outline-width: 2px;
+  outline-offset: -2px;
+}
 
 /* line level button */
-.button_line{
-  border-radius: 0 0 0.25rem 0.25rem ;
+.button_line {
+  border-radius: 0 0 0.25rem 0.25rem;
   white-space: nowrap;
 }
 /* line level button */
-.button_stack{
+.button_stack {
   margin-top: 1rem;
   white-space: nowrap;
-
 }
-
 
 /* Loading bar area */
 /* inspired/stolen from https://codepen.io/hopearmstrong/pen/VNYoNq*/
-#loading-bar{
-  background-color:#fff;
+#loading-bar {
+  background-color: #fff;
   box-sizing: border-box;
   width: 80vmin;
   height: 80vmin;
-  padding:2rem;
+  padding: 2rem;
 }
 #loading-bar-left {
-  color:#ccc;
+  color: #ccc;
   animation: loading-bar-morph 1s linear 0.2s infinite;
   transform-origin: center;
 }
@@ -128,13 +138,13 @@ button{
   .app {
     width: 60vmin;
   }
-  .input_line{
-    border-radius: 0.25rem 0 0 0.25rem ;
+  .input_line {
+    border-radius: 0.25rem 0 0 0.25rem;
   }
-  .button_line{
+  .button_line {
     border-radius: 0 0.25rem 0.25rem 0;
   }
-  #loading-bar{
+  #loading-bar {
     width: 60vmin;
     height: 60vmin;
   }

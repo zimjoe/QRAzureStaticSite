@@ -1,16 +1,14 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import "./index.css";
 //import Header from './Header';
-import App from './App';
+import App from "./App";
 //import reportWebVitals from './reportWebVitals';
 
 // hinky solution for now.  Will fix later with a proper menu
-const toggleMenu = (show, hide)=>{
-  
-  [...document.getElementById('QRMenu').children].forEach(child => {
-    console.log(child.id + " - nav"+show)
-    if(child.id==="Nav"+show){
+const toggleMenu = (show, hide) => {
+  [...document.getElementById("QRMenu").children].forEach((child) => {
+    if (child.id === "Nav" + show) {
       document.getElementById(child.dataset.toggle).className = "";
       child.className = "current";
     } else {
@@ -18,20 +16,42 @@ const toggleMenu = (show, hide)=>{
       child.className = "";
     }
   });
-
 };
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    
     <nav id="QRMenu">
-      <button id="NavUrl" className='current' data-toggle="UrlForm" onClick={()=>{toggleMenu("Url", "Wifi")}}>Make a Url QR</button>
-      <button id="NavWifi" data-toggle="WifiForm" onClick={()=>{toggleMenu("Wifi", "Url")}}>Make a Wifi QR</button>
-      <button id="NavEmail" data-toggle="EmailForm" onClick={()=>{toggleMenu("Email", "Url")}}>Make an Email QR</button>
+      <button
+        id="NavUrl"
+        className="current"
+        data-toggle="UrlForm"
+        onClick={() => {
+          toggleMenu("Url", "Wifi");
+        }}
+      >
+        Make a Url QR
+      </button>
+      <button
+        id="NavWifi"
+        data-toggle="WifiForm"
+        onClick={() => {
+          toggleMenu("Wifi", "Url");
+        }}
+      >
+        Make a Wifi QR
+      </button>
+      <button
+        id="NavEmail"
+        data-toggle="EmailForm"
+        onClick={() => {
+          toggleMenu("Email", "Url");
+        }}
+      >
+        Make an Email QR
+      </button>
     </nav>
 
     <App />
-    
   </React.StrictMode>
 );
 
