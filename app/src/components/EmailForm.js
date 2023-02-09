@@ -48,8 +48,10 @@ class EmailForm extends React.Component {
   render() {
     return (
       <form onSubmit={this.handleSubmit} id="EmailForm" className="hidden">
-        <h3>Create an Email Message QR Code</h3>
-
+        <h3>
+          Create an Email Message QR Code
+          <a href="/why_use_an_email_qr">Learn about Email QRs</a>
+        </h3>
         <div className="column">
           <label htmlFor="MailReciever">
             Send To <i>(using standard email format)</i>
@@ -95,7 +97,7 @@ class EmailForm extends React.Component {
             onChange={this.handleInputChange}
           />
           <Button className="button_stack">Submit Email QR</Button>
-          <div class="printonly">
+          <div className="printonly">
             <div>Email: {this.state.mailReceiverValue}</div>
           </div>
         </div>

@@ -43,7 +43,9 @@ class WiFiForm extends React.Component {
   render() {
     return (
       <form onSubmit={this.handleSubmit} id="WifiForm" className="hidden">
-        <h3>Create a WiFi QR Code</h3>
+        <h3>Create a WiFi QR Code
+        <a href="/why_use_a_wifi_qr">Learn about Wifi QRs</a>
+        </h3>
         <div className="column">
           <label htmlFor="WifiName">
             SSID <i>(Minimum 4 characters)</i>
@@ -83,7 +85,7 @@ class WiFiForm extends React.Component {
             onChange={this.handleInputChange}
           />
           <Button className="button_stack">Submit WiFi QR</Button>
-          <div class="printonly">
+          <div className="printonly">
             <div>SSID: {this.state.wifiName}</div>
             <div>Passcode: {this.state.passcode}</div>
           </div>

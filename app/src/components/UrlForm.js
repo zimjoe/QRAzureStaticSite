@@ -23,7 +23,7 @@ class UrlForm extends React.Component {
 
     //?wifiname=KidsAndDogsAreCool&passcode=HelloMyLittleFriendAndPals
     let newUrl = "UrlQR";
-    console.log(newUrl);
+    //console.log(newUrl);
 
     //this.props.handleUrlChange(newUrl, "WiFi QR Code");
     let body = JSON.stringify({
@@ -46,7 +46,9 @@ class UrlForm extends React.Component {
   render() {
     return (
       <form onSubmit={this.handleSubmit} id="UrlForm" className="form urlForm">
-        <h3>Create a Url QR Code</h3>
+        <h3>Create a Url QR Code
+        <a href="/why_use_a_url_qr">Learn about URL QRs</a>
+        </h3>
 
         <div className="column">
           <label htmlFor="UrlValue">
@@ -66,7 +68,7 @@ class UrlForm extends React.Component {
             onChange={this.handleInputChange}
           />
           <Button className="button_stack">Submit Url QR</Button>
-          <div class="printonly">
+          <div className="printonly">
             <div>{this.state.urlValue}</div>
           </div>
         </div>
