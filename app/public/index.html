@@ -2,15 +2,33 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    
+
     <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
-    <link rel="apple-touch-icon" sizes="180x180" href="%PUBLIC_URL%/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="%PUBLIC_URL%/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="%PUBLIC_URL%/favicon-16x16.png">
-    <link rel="mask-icon" href="%PUBLIC_URL%/safari-pinned-tab.svg" color="#5bbad5">
-   
-    <meta name="msapplication-TileColor" content="#da532c">
-    <meta name="theme-color" content="#ffffff">
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="%PUBLIC_URL%/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="%PUBLIC_URL%/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="%PUBLIC_URL%/favicon-16x16.png"
+    />
+    <link
+      rel="mask-icon"
+      href="%PUBLIC_URL%/safari-pinned-tab.svg"
+      color="#5bbad5"
+    />
+
+    <meta name="msapplication-TileColor" content="#da532c" />
+    <meta name="theme-color" content="#ffffff" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#000000" />
@@ -18,9 +36,11 @@
       name="Qrapio QR Code Generator"
       content="Create WiFi and URL QR codes."
     />
-    <meta name="description" 
+    <meta
+      name="description"
       content="A simple QR code creator for WiFI and Urls.  
-      Originally created to test Azure deployments from Github." />
+      Originally created to test Azure deployments from Github."
+    />
     <!--
       manifest.json provides metadata used when your web app is installed on a
       user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
@@ -36,37 +56,60 @@
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
     <title>QR Code Generator</title>
+    <style>
+      /* added to stop flashes when using router for pages */
+      html,
+      body {
+        background-color: #282c34;
+        margin: 0;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto",
+          "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
+          "Helvetica Neue", sans-serif;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        align-items: center;
+        justify-content: center;
+        color: #dddddd;
+      }
+    </style>
   </head>
   <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-LWQ6WQ0H9C"></script>
+  <script
+    async
+    src="https://www.googletagmanager.com/gtag/js?id=G-LWQ6WQ0H9C"
+  ></script>
   <script>
     window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag("js", new Date());
 
-    gtag('config', 'G-LWQ6WQ0H9C');
+    gtag("config", "G-LWQ6WQ0H9C");
   </script>
   <body>
     <header>
+      <a href="/" class="nodecoration">
       <h1>Qrap.io</h1>
-      <h2><span>Qrapio</span> QR Code Generator</h2>
+      <h2><span>Qrapio</span> QR Code Generator</h2></a>
     </header>
     <noscript>You need to enable JavaScript to run this app.</noscript>
-    <div id="root">
-      
-    </div>
+    <div id="root"></div>
     <footer>
       <div>An open source project for deploying a QR Azure App.</div>
       <ul>
         <li>
-          <a href='https://github.com/zimjoe/QRAzureStaticSite/wiki'>https://github.com/zimjoe/QRAzureStaticSite</a>
+          <a href="https://github.com/zimjoe/QRAzureStaticSite/wiki"
+            >https://github.com/zimjoe/QRAzureStaticSite</a
+          >
         </li>
         <li>
-          <a href='https://github.com/zimjoe/QRAzureFunctions/wiki'>https://github.com/zimjoe/QRAzureFunctions</a>
+          <a href="https://github.com/zimjoe/QRAzureFunctions/wiki"
+            >https://github.com/zimjoe/QRAzureFunctions</a
+          >
         </li>
       </ul>
-      <div class='footer_aeveco'>Aeveco 2023</div>
+      <div class="footer_aeveco">Aeveco 2023</div>
     </footer>
   </body>
-
 </html>

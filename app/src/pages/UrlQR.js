@@ -1,8 +1,12 @@
-const UrlContent = () => {
+const UrlQr = () => {
   return (
-    <div id="UrlContent">
+    <div id="UrlContent" className="content">
+      <h3>
+        I asked ChatGPT about Url QR codes
+        , this is what it said:
+      </h3>
       <p>Using a URL QR code can provide several benefits, including:</p>
-      <ul>
+      <ol>
         <li>
           Convenience: QR codes can be scanned quickly and easily with a
           smartphone, eliminating the need for manual typing of complex or
@@ -27,14 +31,15 @@ const UrlContent = () => {
           providing a seamless and user-friendly way to access your online
           content.
         </li>
-      </ul>
+      </ol>
       <p>
         In conclusion, using a URL QR code can provide a convenient,
         time-saving, and effective way to share a specific URL with others and
         promote your brand or website.
       </p>
+      <a href="/">Return to QR builder</a>
     </div>
   );
 };
 
-export default UrlContent;
+export default UrlQr;
