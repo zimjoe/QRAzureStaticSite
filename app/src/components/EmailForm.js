@@ -24,7 +24,7 @@ class EmailForm extends React.Component {
     event.preventDefault();
 
     let newUrl = "MailQR";
-    console.log(newUrl);
+    //console.log(newUrl);
 
     let body = JSON.stringify({
       MailReceiver: this.state.mailReceiverValue,
